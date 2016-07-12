@@ -14,15 +14,18 @@ Template.body.onCreated(function bodyOnCreated() {
 Template.body.helpers({
   tasks() {
     const instance = Template.instance();
+    selector = {owner: Meteor.userId()};
+
     if (instance.state.get('hideCompleted')) {
       // If hide completed is checked, filter tasks
-      return Tasks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
+      return Tasks.find( { $and:[ { checked: { $ne: true } }, selector ]},{ sort: { createdAt: -1 } });
     }
     // Otherwise, return all of the tasks
-    return Tasks.find({}, { sort: { createdAt: -1 } });
+    return Tasks.find(selector, { sort: { createdAt: -1 } });
   },
   incompleteCount() {
-    return Tasks.find({ checked: { $ne: true } }).count();
+    selector = {owner: Meteor.userId()};
+    return Tasks.find({ $and:[ { checked: { $ne: true } }, selector ]} ).count();
   },
 });
 
@@ -43,6 +46,9 @@ Template.body.events({
       username: Meteor.user().username,
     });
  
+    // Insert a task into the collection
+    Meteor.call('tasks.insert', text);
+
     // Clear form
     target.text.value = '';
   },
