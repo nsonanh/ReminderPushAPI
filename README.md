@@ -1,6 +1,13 @@
 # ReminderPushAPI
 
-Using meteor.js + mongoDB + W3C's Push API
+Using: 
+- meteor.js 
+- mongoDB
+- bootstrap
+- W3C's Push API
+
 Functions:
-  - TO DO
-  - Reminder at specified time
+  - TO DO.
+  - login/ logout.
+  - Reminder at specified time.
+  - Push notification cross-platforms.
