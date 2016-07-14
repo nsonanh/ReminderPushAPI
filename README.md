@@ -5,6 +5,7 @@ Using:
 - mongoDB
 - bootstrap
 - W3C's Push API
+- Xdan's datetimepicker ( jquery) - https://github.com/xdan/datetimepicker
 
 Functions:
   - To-do list.
