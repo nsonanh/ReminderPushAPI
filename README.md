@@ -13,8 +13,8 @@ Functions:
   - Push notification cross-platforms.
 
 # To build & run project:
-- Clone this project at git@github.com:nsonanh/ReminderPushAPI.git
+- Clone this project at 'git@github.com:nsonanh/ReminderPushAPI.git'
 - In terminal, go to folder simple-reminder
-- Run command meteor
+- Run command 'meteor'
 - The server should start now.
 - Go to project's page at http://localhost:3000/
