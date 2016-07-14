@@ -3,7 +3,19 @@
     <button class="delete">&times;</button>
  
     <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
- 
+
     <span class="text"><strong>{{username}}</strong> - {{text}}</span>
-  </li>
+
+  	<form name="updateReminder">
+    	<div class="reminderInput">
+    		<input id="datetimepicker{{text}}" type="text" value="set reminder time" onkeydown="return false">
+    		<input type="Submit" value="Set">
+    	</div>
+  	</form>
+  
+	</li>
+  
+<script type="text/javascript">
+	$('#datetimepicker{{text}}').datetimepicker();
+</script>
 </template>

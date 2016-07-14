@@ -21,3 +21,4 @@ autopublish             # Publish all data to the clients (for prototyping)
 reactive-dict
 accounts-ui
 accounts-password
+drewy:datetimepicker

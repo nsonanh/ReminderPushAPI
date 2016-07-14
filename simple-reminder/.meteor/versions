@@ -24,6 +24,7 @@ ddp-rate-limiter@1.0.5
 ddp-server@1.2.9
 deps@1.0.12
 diff-sequence@1.0.6
+drewy:datetimepicker@1.0.3
 ecmascript@0.4.7
 ecmascript-runtime@0.2.12
 ejson@1.0.12
@@ -51,6 +52,7 @@ mobile-experience@1.0.4
 mobile-status-bar@1.0.12
 modules@0.6.5
 modules-runtime@0.6.5
+momentjs:moment@2.8.4
 mongo@1.1.9_1
 mongo-id@1.0.5
 npm-bcrypt@0.8.6_2
