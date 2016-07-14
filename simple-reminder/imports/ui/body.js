@@ -9,6 +9,7 @@ import './body.html';
 
 Template.body.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
+  Meteor.subscribe('tasks');
 });
  
 Template.body.helpers({
@@ -55,4 +56,7 @@ Template.body.events({
   'change .hide-completed input'(event, instance) {
     instance.state.set('hideCompleted', event.target.checked);
   },
+  'submit .updateReminder'(event) {
+    event.preventDefault();
+  }
 });
