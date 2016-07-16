@@ -40,10 +40,11 @@ Meteor.methods({
     Tasks.update(taskId, { $set: { checked: setChecked } });
   },
   'tasks.updateReminder'(taskId, date) {
-    throw new Meteor.Error('inside ' + date);
     check(taskId, String);
-    check(date, Date);
+    check(date, String);
+    var reminderDate = moment(date, "DD.MM.YYYY h:mm a");
+    //throw new Meteor.Error('inside ' + date +' ' + reminderDate.toString());
 
-    Tasks.update(taskId, { $set: { remindAt: date } });
+    Tasks.update(taskId, { $set: { remindAt: reminderDate.toISOString() } });
   },
 });

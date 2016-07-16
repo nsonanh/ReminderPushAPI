@@ -13,6 +13,11 @@
 	</li>
   
 <script type="text/javascript">
-	$('#datetimepicker{{this._id}}').datetimepicker();
+	$('#datetimepicker{{this._id}}').datetimepicker(
+    {
+      format:'DD.MM.YYYY h:mm a',
+      formatTime:'h:mm a',
+      formatDate:'DD.MM.YYYY'
+    });
 </script>
 </template>
