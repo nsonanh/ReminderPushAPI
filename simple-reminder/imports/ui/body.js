@@ -40,14 +40,6 @@ Template.body.events({
     const text = target.text.value;
  
     // Insert a task into the collection
-    Tasks.insert({
-      text,
-      createdAt: new Date(), // current time
-      owner: Meteor.userId(),
-      username: Meteor.user().username,
-    });
- 
-    // Insert a task into the collection
     Meteor.call('tasks.insert', text);
 
     // Clear form
@@ -56,7 +48,4 @@ Template.body.events({
   'change .hide-completed input'(event, instance) {
     instance.state.set('hideCompleted', event.target.checked);
   },
-  'submit .updateReminder'(event) {
-    event.preventDefault();
-  }
 });

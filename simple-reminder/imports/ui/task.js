@@ -13,4 +13,8 @@ Template.task.events({
   'click .delete'() {
     Meteor.call('tasks.remove', this._id);
   },
+  'click .updateReminder'() {
+  	var date = document.getElementById("datetimepicker" + this._id);
+    Meteor.call('tasks.updateReminder', this._id, date.value);
+  },
 });

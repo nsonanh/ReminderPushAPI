@@ -6,16 +6,13 @@
 
     <span class="text"><strong>{{username}}</strong> - {{text}}</span>
 
-  	<form name="updateReminder">
     	<div class="reminderInput">
-    		<input id="datetimepicker{{text}}" type="text" value="set reminder time" onkeydown="return false">
-    		<input type="Submit" value="Set">
+    		<input name="datetimepicker{{this._id}}" id="datetimepicker{{this._id}}" type="text" value="{{remindAt}}" onkeydown="return false">
+        <button class="updateReminder">Set</button>
     	</div>
-  	</form>
-  
 	</li>
   
 <script type="text/javascript">
-	$('#datetimepicker{{text}}').datetimepicker();
+	$('#datetimepicker{{this._id}}').datetimepicker();
 </script>
 </template>
