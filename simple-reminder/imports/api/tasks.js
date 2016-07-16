@@ -45,6 +45,8 @@ Meteor.methods({
     var reminderDate = moment(date, "DD.MM.YYYY h:mm a");
     //throw new Meteor.Error('inside ' + date +' ' + reminderDate.toString());
 
-    Tasks.update(taskId, { $set: { remindAt: reminderDate.toISOString() } });
+    if (reminderDate.isValid()) {
+      Tasks.update(taskId, { $set: { remindAt: reminderDate.toISOString() } });
+    }
   },
 });

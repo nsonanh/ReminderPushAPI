@@ -49,3 +49,10 @@ Template.body.events({
     instance.state.set('hideCompleted', event.target.checked);
   },
 });
+
+Template.registerHelper("prettifyDate", function(timestamp) {
+    if(timestamp == null) {
+      return null;
+    }
+    return moment(new Date(timestamp)).format("DD.MM.YYYY h:mm a");
+});

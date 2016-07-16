@@ -7,7 +7,7 @@
     <span class="text"><strong>{{username}}</strong> - {{text}}</span>
 
     	<div class="reminderInput">
-    		<input name="datetimepicker{{this._id}}" id="datetimepicker{{this._id}}" type="text" value="{{remindAt}}" onkeydown="return false">
+    		<input name="datetimepicker{{this._id}}" value="{{prettifyDate remindAt}}" id="datetimepicker{{this._id}}" type="text" onkeydown="return false">
         <button class="updateReminder">Set</button>
     	</div>
 	</li>
@@ -17,7 +17,9 @@
     {
       format:'DD.MM.YYYY h:mm a',
       formatTime:'h:mm a',
-      formatDate:'DD.MM.YYYY'
+      formatDate:'DD.MM.YYYY',
+      minDate: new Date(),
+      defaultDate:new Date()
     });
 </script>
 </template>
