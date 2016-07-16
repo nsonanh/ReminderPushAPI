@@ -1,11 +1,13 @@
 # ReminderPushAPI
 
-Using: 
-- meteor.js 
-- mongoDB
-- bootstrap
+Using:
+- Meteor js 
+- MongoDB
+- Bootstrap 3
 - W3C's Push API
+- Moment js
 - Xdan's datetimepicker ( jquery) - https://github.com/xdan/datetimepicker
+
 
 Functions:
   - To-do list.
