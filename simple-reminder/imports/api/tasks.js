@@ -5,6 +5,13 @@ import { check } from 'meteor/check';
 
 export const Tasks = new Mongo.Collection('tasks');
 
+if (Meteor.isServer) {
+  // This code only runs on the server
+  Meteor.publish('tasks', function tasksPublication() {
+    return Tasks.find();
+  });
+}
+
 Meteor.methods({
   'tasks.insert'(text) {
     check(text, String);
@@ -31,5 +38,20 @@ Meteor.methods({
     check(setChecked, Boolean);
  
     Tasks.update(taskId, { $set: { checked: setChecked } });
+  },
+  'tasks.updateReminder'(taskId, date) {
+    check(taskId, String);
+    check(date, String);
+    var reminderDate = moment(date, "DD.MM.YYYY h:mm a");
+    //throw new Meteor.Error('inside ' + date +' ' + reminderDate.toString());
+
+    if (reminderDate.isValid()) {
+      Tasks.update(taskId, { $set: { remindAt: reminderDate.toISOString() } });
+    }
+  },
+  'tasks.clearReminder'(taskId) {
+    check(taskId, String);
+
+    Tasks.update(taskId, { $set: { remindAt: null } });
   },
 });

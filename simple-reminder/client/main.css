@@ -101,6 +101,10 @@ li.private {
   background: #eee;
   border-color: #ddd;
 }
+
+div.reminderInput {
+    margin-left: 30px;
+  }
  
 header .hide-completed {
   float: right;
