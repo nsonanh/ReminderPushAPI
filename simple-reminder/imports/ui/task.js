@@ -17,4 +17,7 @@ Template.task.events({
   	var date = document.getElementById("datetimepicker" + this._id);
     Meteor.call('tasks.updateReminder', this._id, date.value);
   },
+  'click .clearReminder'() {
+    Meteor.call('tasks.clearReminder', this._id);
+  },
 });

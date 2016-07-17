@@ -49,4 +49,9 @@ Meteor.methods({
       Tasks.update(taskId, { $set: { remindAt: reminderDate.toISOString() } });
     }
   },
+  'tasks.clearReminder'(taskId) {
+    check(taskId, String);
+
+    Tasks.update(taskId, { $set: { remindAt: null } });
+  },
 });
