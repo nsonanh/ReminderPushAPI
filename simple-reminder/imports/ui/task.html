@@ -6,12 +6,17 @@
 
     <span class="text"><strong>{{username}}</strong> - {{text}}</span>
 
-    	<div class="reminderInput">
-    		<input name="datetimepicker{{this._id}}" value="{{prettifyDate remindAt}}" id="datetimepicker{{this._id}}" type="text" onkeydown="return false">
-        <button class="updateReminder">Set</button>
-        <button class="clearReminder">Unset</button>
-    	</div>
-	</li>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">
+        <i class="glyphicon glyphicon-time"></i>
+      </span>
+      <input name="datetimepicker{{this._id}}" value="{{prettifyDate remindAt}}" id="datetimepicker{{this._id}}" type="text" onkeydown="return false" class="form-control" placeholder="Set Reminder">
+      <span class="input-group-btn">
+        <button class="btn btn-default" data-action="updateReminder">Set</button>
+        <button class="btn btn-default" data-action="clearReminder">Unset</button>
+      </span>
+    </div>
+  </li>
   
 <script type="text/javascript">
 	$('#datetimepicker{{this._id}}').datetimepicker(

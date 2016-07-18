@@ -86,6 +86,7 @@ li {
 }
  
 li .text {
+  font-size: 15px;
   margin-left: 10px;
 }
  
@@ -102,9 +103,10 @@ li.private {
   border-color: #ddd;
 }
 
-div.reminderInput {
-    margin-left: 30px;
-  }
+li li.text:hover {
+  font-size: 25px;
+  background: #f6f6f6;
+}
  
 header .hide-completed {
   float: right;
